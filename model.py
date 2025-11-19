@@ -14,6 +14,13 @@ class GallowsModel:
     def masked_word(self):
         result = []
         result.append(self.secret[0])
-        result.append("-"*len(self.secret-2))
+        for _ in range(len(self.secret)-2):
+            result.append("-")
         result.append(self.secret[-1])
         return result
+
+    def guess_letter(self, letter: str):
+        if letter not in self.secret:
+            return "помилка"
+        if letter in self.secret:
+            return "вгадано"
