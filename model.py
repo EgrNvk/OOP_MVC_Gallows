@@ -2,7 +2,7 @@ import random
 
 class GallowsModel:
     def __init__(self):
-        self.words=["коробка", "смартфон"]
+        self.words=["коробка", "смартфон", "машина", "духовка", "зарядка", "компьютер", "ноутбук", "кровать"]
 
         self.secret=random.choice(self.words)
         self.guessed=set()

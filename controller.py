@@ -39,8 +39,14 @@ class GallowsController:
             self.view.set_word(self.model.masked_word())
             self.view.set_message(f"Ви вгадали слово: {self.model.secret}")
 
+            self.view.button.config(state="disabled")
+            self.view.entry.config(state="disabled")
+
         elif self.model.is_lost():
             self.view.set_message(f"Ви програли. Слово було {self.model.secret}")
+
+            self.view.button.config(state="disabled")
+            self.view.entry.config(state="disabled")
 
     def run(self):
         self.view.mainloop()
