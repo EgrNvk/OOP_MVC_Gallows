@@ -24,3 +24,18 @@ class GallowsView:
 
         self.message_label=tk.Label(self.root, text="", font=("Arial", 12))
         self.message_label.pack(pady=(5, 5))
+
+    def set_word(self, masked_list):
+        self.word_label.config(text=f"Слово: {' '.join(masked_list)}")
+
+    def set_attempts(self, wrong, maximum):
+        self.attempts_label.config(text=f"Спроби: {wrong}/{maximum}")
+
+    def set_message(self, message):
+        self.message_label.config(text=message)
+
+    def set_guess_handler(self, handler):
+        self.button.config(command=handler)
+
+    def mainloop(self):
+        self.root.mainloop()
