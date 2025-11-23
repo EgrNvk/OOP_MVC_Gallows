@@ -35,3 +35,9 @@ class GallowsModel:
         else:
             self.wrong_attempts = self.wrong_attempts + 1
             return "помилка"
+
+    def is_won(self):
+        return all(ch in self.guessed for ch in self.secret)
+
+    def is_lost(self):
+        return self.wrong_attempts >= self.max_attempts
